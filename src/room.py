@@ -129,17 +129,16 @@ class RoomBooking:
         combo_room_type.grid(row=3, column=1)
         combo_room_type.bind("<<ComboboxSelected>>", self.update_room_price)
 
-        # Room Available (Dropdown Replacement with Popup Matrix Window Layout)
         lbl_room_available = tk.Label(labelframeleft, text="Room Available", font=("arial", 12, "bold"), padx=2, pady=6)
         lbl_room_available.grid(row=4, column=0, sticky=tk.W)
 
         room_select_frame = tk.Frame(labelframeleft)
         room_select_frame.grid(row=4, column=1, sticky=tk.W)
 
-        self.entry_room_available = ttk.Entry(room_select_frame, textvariable=self.var_room_vailable, font=("arial", 13, "bold"), width=21, state="readonly")
+        self.entry_room_available = ttk.Entry(room_select_frame, textvariable=self.var_room_vailable, font=("arial", 13, "bold"), width=25, state="readonly")
         self.entry_room_available.pack(side=tk.LEFT)
 
-        btn_choose_room = tk.Button(room_select_frame, text="⋮", font=("arial", 11, "bold"), bg="black", fg="gold", width=3, cursor="hand2", command=self.popup_room_matrix)
+        btn_choose_room = tk.Button(room_select_frame, text="...", font=("arial", 11, "bold"), bg="black", fg="gold", width=3, cursor="hand2", command=self.popup_room_matrix)
         btn_choose_room.pack(side=tk.LEFT, padx=2)
 
         # Meal Options
